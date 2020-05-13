@@ -1,0 +1,19 @@
+{
+  "name": "firstserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JordanRuetz/firstServer.git"
+  },
+  "author": "Jordan Ruetz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JordanRuetz/firstServer/issues"
+  },
+  "homepage": "https://github.com/JordanRuetz/firstServer#readme"
+}
