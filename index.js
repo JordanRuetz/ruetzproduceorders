@@ -1,9 +1,14 @@
-const http = require("http");
+var express = require("express");
+var app = express();
+var path = require("path");
 
-const requestListener = function (req, res) {
-  res.writeHead(200);
-  res.end("Hello, World!");
-};
+const PORT = process.env.PORT || 3000;
 
-const server = http.createServer(requestListener);
-server.listen(3000);
+app.get("*", function (req, res) {
+  const fileLocation = path.join(__dirname, "./app/client/index.html");
+  res.sendFile(fileLocation);
+});
+
+app.listen(PORT, function () {
+  console.log(`listening on port ${PORT}`);
+});
