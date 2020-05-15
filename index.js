@@ -1,4 +1,5 @@
 var express = require("express");
+var http = require("http");
 var app = express();
 var path = require("path");
 
@@ -10,6 +11,5 @@ app.get("*", function (req, res) {
   // res.sendFile(fileLocation);
 });
 
-app.listen(PORT, function () {
-  console.log(`listening on port ${PORT}`);
-});
+const server = http.createServer(app);
+server.listen(PORT);
