@@ -5,8 +5,9 @@ var path = require("path");
 const PORT = process.env.PORT || 3000;
 
 app.get("*", function (req, res) {
-  const fileLocation = path.join(__dirname, "./app/client/index.html");
-  res.sendFile(fileLocation);
+  res.send("Does it work?");
+  // const fileLocation = path.join(__dirname, "./app/client/index.html");
+  // res.sendFile(fileLocation);
 });
 
 app.listen(PORT, function () {
