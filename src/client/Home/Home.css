@@ -1,7 +1,7 @@
 #app {
   min-height: 100vh;
   text-align: center;
-  background-image: url("../resources/farmfield4.jpg");
+  background-image: url("../resources/farmPics/peas2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -112,7 +112,7 @@ body {
 
 #background1 {
   min-height: 50vh;
-  background-image: url("../resources/farmfield3.jpg");
+  background-image: url("../resources/farmPics/beans.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -121,7 +121,7 @@ body {
 
 #background2 {
   min-height: 50vh;
-  background-image: url("../resources/farmfield.jpg");
+  background-image: url("../resources/farmPics/squash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
