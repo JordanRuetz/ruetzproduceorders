@@ -1,0 +1,171 @@
+#app {
+  min-height: 100vh;
+  text-align: center;
+  background-image: url("../resources/farmfield4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-header {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+#home-button {
+  margin: 5px 10vw;
+  font-family: "Poppins", sans-serif;
+}
+
+#home-button * {
+  color: white;
+  text-decoration: none;
+}
+
+#right-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10vw;
+  font-family: myFirstFont;
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  margin: auto;
+  color: white;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  max-width: 80vw;
+}
+
+.content-container {
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.content-container p {
+  font-size: 30px;
+  font-family: myFirstFont;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+.content-container h1 {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+.content-container * {
+  color: black;
+}
+
+.link:hover {
+  font-weight: bold;
+}
+
+.content-pane {
+  height: 50vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#background1 {
+  min-height: 50vh;
+  background-image: url("../resources/farmfield3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: auto;
+}
+
+#background2 {
+  min-height: 50vh;
+  background-image: url("../resources/farmfield.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: auto;
+}
+
+.parallax-container {
+  font-family: "Poppins", sans-serif;
+  max-width: 50vw;
+  margin: auto;
+}
+
+.parallax-container * {
+  color: white;
+}
+
+.parallax-container h1 {
+  font-size: 40px;
+}
+
+.parallax-container h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.parallax-link *:hover {
+  color: lightgray;
+}
+
+#footer-container {
+  width: 100vw;
+  background-color: #47433d;
+  text-align: center;
+  height: 8vh;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(../resources/fonts/Raleway-Regular.ttf);
+}

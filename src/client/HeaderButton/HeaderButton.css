@@ -1,0 +1,11 @@
+.nav-button * {
+  color: white;
+  padding: 10px 20px;
+  font-family: myFirstFont;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nav-button *:hover {
+  color: lightgray;
+}
