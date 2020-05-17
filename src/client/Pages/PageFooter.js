@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Page.css";
+import copyrightIcon from "../resources/icons/copyright-white.png";
+import facebookIcon from "../resources/icons/facebook.png";
 
 function PageFooter() {
   return (
@@ -16,7 +18,7 @@ function PageFooter() {
           <h6 id="copyright-container">
             <span>
               <img
-                src={require("../resources/icons/copyright-white.png")}
+                src={copyrightIcon}
                 alt="copyright icon"
                 width="8"
                 height="8"
@@ -28,7 +30,7 @@ function PageFooter() {
         <div className="footer-section">
           <a href="https://www.facebook.com/Ruetzs-Farm-Fresh-Produce-Greenhouses-and-CSA-626008304089679">
             <img
-              src={require("../resources/icons/facebook.png")}
+              src={facebookIcon}
               alt="facebook icon"
               width="40"
               height="40"
