@@ -25,6 +25,9 @@ function Home() {
             <HeaderButton name="Gallery" target="/gallery"></HeaderButton>
             <HeaderButton name="Contact" target="/contact"></HeaderButton>
           </div>
+          <div id="expand-button">
+            <h2>TT</h2>
+          </div>
         </header>
         <div id="main">
           <h1>Ruetz's Farm Fresh Produce</h1>

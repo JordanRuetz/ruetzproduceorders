@@ -41,7 +41,6 @@
   justify-content: center;
   margin-right: 10vw;
   font-family: myFirstFont;
-  font-size: 10px;
 }
 
 h1,
@@ -165,7 +164,27 @@ body {
   align-items: center;
 }
 
+#expand-button {
+  display: none;
+}
+
 @font-face {
   font-family: myFirstFont;
   src: url(../resources/fonts/Raleway-Regular.ttf);
+}
+
+@media only screen and (max-width: 600px) {
+  #right-buttons {
+    display: none;
+  }
+
+  #expand-button {
+    display: inline;
+    margin-right: 5vw;
+  }
+
+  #home-button {
+    font-size: 0.7em;
+    margin: 5px 5vw;
+  }
 }

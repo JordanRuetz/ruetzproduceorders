@@ -109,6 +109,10 @@ div.gallery img {
   height: auto;
 }
 
+#page-expand-button {
+  display: none;
+}
+
 #gallery {
   width: var(--gallery-width);
 }
@@ -122,5 +126,21 @@ div.gallery img {
 @media (max-width: 800px) {
   :root {
     --num-pics: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #page-right-buttons {
+    display: none;
+  }
+
+  #page-expand-button {
+    display: inline;
+    margin-right: 5vw;
+  }
+
+  #page-home-button {
+    font-size: 0.7em;
+    margin: 5px 5vw;
   }
 }

@@ -9,3 +9,14 @@
 .nav-button *:hover {
   color: lightgray;
 }
+
+@media only screen and (max-width: 600px) {
+  .nav-button {
+    font-size: 8px;
+    padding: 10px 10px;
+  }
+
+  .nav-button * {
+    text-align: center;
+  }
+}
