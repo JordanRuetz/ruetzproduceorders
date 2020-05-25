@@ -1,6 +1,8 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
+  mode: "development",
   entry: "./src/client/index.js",
   output: {
     filename: "main.js",
@@ -33,4 +35,6 @@ module.exports = {
       },
     ],
   },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  watch: process.env.ENVIRONMENT === "development",
 };

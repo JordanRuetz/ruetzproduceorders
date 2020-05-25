@@ -6,10 +6,10 @@ var app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use("/", express.static(path.join(__dirname, "./dist")));
+app.use("/", express.static(path.join(__dirname, "../../dist")));
 
 app.get("*", function (req, res) {
-  const fileLocation = path.join(__dirname, "./dist/index.html");
+  const fileLocation = path.join(__dirname, "../../dist/index.html");
   res.sendFile(fileLocation);
 });
 

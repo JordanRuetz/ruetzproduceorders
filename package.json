@@ -4,9 +4,12 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/server/index.js",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently  \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "NODE_ENV=development webpack",
+    "dev:server": "nodemon src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -34,8 +37,10 @@
     "@babel/preset-react": "^7.9.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
+    "concurrently": "^5.2.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
+    "nodemon": "^2.0.4",
     "style-loader": "^1.2.1",
     "webpack-cli": "^3.3.11"
   }

@@ -169,6 +169,18 @@ body {
   display: none;
 }
 
+#cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: coral;
+  display: none;
+  position: absolute;
+}
+
+#cover-close {
+  float: right;
+}
+
 @font-face {
   font-family: myFirstFont;
   src: url(../resources/fonts/Raleway-Regular.ttf);
