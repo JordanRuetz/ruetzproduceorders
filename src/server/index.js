@@ -6,6 +6,11 @@ var app = express();
 
 const PORT = process.env.PORT || 3000;
 
+app.use(
+  "/public/icons",
+  express.static(path.join(__dirname, "../../public/icons"))
+);
+
 app.use("/", express.static(path.join(__dirname, "../../dist")));
 
 app.get("*", function (req, res) {
