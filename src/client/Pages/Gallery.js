@@ -1,7 +1,7 @@
 import React from "react";
 import "./Page.css";
-import PageHeader from "./PageHeader";
 import PageFooter from "./PageFooter";
+import Header from "../pageLayoutComponents/Header";
 
 import farmfield from "../resources/gallery/farmfield.jpg";
 import farmfield2 from "../resources/gallery/farmfield2.jpg";
@@ -49,7 +49,7 @@ class Gallery extends React.Component {
   render() {
     return (
       <div>
-        <PageHeader></PageHeader>
+        <Header headerName="page-header"></Header>
         <div className="main-content column-flex">
           <h1 className="main-content-header">Gallery</h1>
           <div id="gallery" className="main-content-body">
