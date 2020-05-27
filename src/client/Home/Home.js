@@ -1,48 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import HeaderButton from "../HeaderButton/HeaderButton";
 import PageFooter from "../Pages/PageFooter";
-import openIcon from "../resources/icons/open-menu.png";
-import closeIcon from "../resources/icons/close.png";
-
-let shown = false;
+import Header from "../pageLayoutComponents/Header";
 
 function Home() {
   return (
     <div>
-      <div id="cover">
-        <div id="cover-close" onClick={addClass}>
-          <img src={closeIcon} alt="close icon" width="30" height="30"></img>
-        </div>
-        <HeaderButton name="About Us" target="/about"></HeaderButton>
-        <HeaderButton name="Where to Find Us" target="/findus"></HeaderButton>
-        <HeaderButton name="CSA" target="/csa"></HeaderButton>
-        <HeaderButton name="Gallery" target="/gallery"></HeaderButton>
-        <HeaderButton name="Contact" target="/contact"></HeaderButton>
-      </div>
       <div id="app">
-        <header id="app-header">
-          <div id="home-button">
-            <h1>
-              <Link to="/">Ruetz's Farm Fresh Produce</Link>
-            </h1>
-          </div>
-          <div className="spacer"></div>
-          <div id="right-buttons">
-            <HeaderButton name="About Us" target="/about"></HeaderButton>
-            <HeaderButton
-              name="Where to Find Us"
-              target="/findus"
-            ></HeaderButton>
-            <HeaderButton name="CSA" target="/csa"></HeaderButton>
-            <HeaderButton name="Gallery" target="/gallery"></HeaderButton>
-            <HeaderButton name="Contact" target="/contact"></HeaderButton>
-          </div>
-          <div id="expand-button" onClick={addClass}>
-            <img src={openIcon} alt="open icon" width="30" height="30"></img>
-          </div>
-        </header>
+        <Header headerName="home-header"></Header>
         <div id="main">
           <h1>Ruetz's Farm Fresh Produce</h1>
           <h3>A Local Family Farm</h3>
