@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Page.css";
 import copyrightIcon from "../resources/icons/copyright-white.png";
 import facebookIcon from "../resources/icons/facebook.png";
+import "./styles/footer.scss";
 
 function PageFooter() {
   return (

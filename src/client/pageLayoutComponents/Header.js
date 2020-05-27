@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import HeaderButton from "../HeaderButton/HeaderButton";
 import openIcon from "../resources/icons/open-menu.png";
 import closeIcon from "../resources/icons/close.png";
-import "./common-styles.scss";
-import "./page-header.scss";
+import "./styles/header.scss";
+import "./styles/page-header.scss";
 
 let shown = false;
 

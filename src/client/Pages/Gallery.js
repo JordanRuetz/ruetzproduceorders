@@ -1,6 +1,6 @@
 import React from "react";
 import "./Page.css";
-import PageFooter from "./PageFooter";
+import PageFooter from "../pageLayoutComponents/PageFooter";
 import Header from "../pageLayoutComponents/Header";
 
 import farmfield from "../resources/gallery/farmfield.jpg";

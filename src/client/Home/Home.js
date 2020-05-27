@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import PageFooter from "../Pages/PageFooter";
+import PageFooter from "../pageLayoutComponents/PageFooter";
 import Header from "../pageLayoutComponents/Header";
 
 function Home() {
