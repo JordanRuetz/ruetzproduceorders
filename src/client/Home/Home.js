@@ -59,15 +59,4 @@ function Home() {
   );
 }
 
-function addClass() {
-  const dropdown = document.getElementById("cover");
-
-  if (shown) {
-    dropdown.style.display = "none";
-  } else {
-    dropdown.style.display = "block";
-  }
-  shown = !shown;
-}
-
 export default Home;

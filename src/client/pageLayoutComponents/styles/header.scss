@@ -33,7 +33,12 @@
 }
 
 #cover-close {
-  float: right;
+  position: absolute;
+  right: 0px;
+}
+
+#cover-close img {
+  margin: 20px;
 }
 
 @font-face {
