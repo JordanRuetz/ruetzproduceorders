@@ -6,13 +6,11 @@ import closeIcon from "../resources/icons/close.png";
 import "./styles/header.scss";
 import "./styles/page-header.scss";
 
-let shown = false;
-
 function Header(props) {
   return (
     <div className={props.headerName}>
       <div id="cover">
-        <div id="cover-close" onClick={addClass}>
+        <div id="cover-close" onClick={hideCover}>
           <img src={closeIcon} alt="close icon" width="20" height="20"></img>
         </div>
         <HeaderButton
@@ -75,7 +73,7 @@ function Header(props) {
             target="/contact"
           ></HeaderButton>
         </div>
-        <div id="expand-button" onClick={addClass}>
+        <div id="expand-button" onClick={displayCover}>
           <img src={openIcon} alt="open icon" width="25" height="25"></img>
         </div>
       </header>
@@ -83,15 +81,14 @@ function Header(props) {
   );
 }
 
-function addClass() {
+function displayCover() {
   const dropdown = document.getElementById("cover");
+  dropdown.style.display = "block";
+}
 
-  if (shown) {
-    dropdown.style.display = "none";
-  } else {
-    dropdown.style.display = "block";
-  }
-  shown = !shown;
+function hideCover() {
+  const dropdown = document.getElementById("cover");
+  dropdown.style.display = "none";
 }
 
 export default Header;

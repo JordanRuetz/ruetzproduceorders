@@ -1,0 +1,116 @@
+@import "../styles/_general.scss";
+
+$background-image1: url("../resources/farmPics/peas2.jpg");
+
+.page {
+  height: 100vh;
+}
+
+/* Content related styling */
+.main-content {
+  min-height: 84vh;
+  @include column-flex();
+}
+
+.main-content-header {
+  margin: 30px;
+}
+
+.main-content-body {
+  margin-bottom: 50px;
+}
+
+/* Gallery related styling */
+:root {
+  --gallery-width: min(1300px, 90vw);
+  --pic-width: min(400px, 80vw);
+  --pic-margin: 5px;
+  --num-pics: 3;
+}
+
+div.gallery {
+  margin: var(--pic-margin);
+  float: left;
+  width: calc((var(--gallery-width) / var(--num-pics)) - var(--pic-margin) * 2);
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+#gallery {
+  width: var(--gallery-width);
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --num-pics: 2;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --num-pics: 1;
+  }
+}
+
+/* Contact related styling */
+#contact-main {
+  min-height: 84vh;
+  background-image: $background-image1;
+  padding: 30px;
+  @include fixed-background-image();
+  @include column-flex();
+
+  h1 {
+    margin: 20px;
+    font-size: 3em;
+  }
+
+  * {
+    color: white;
+  }
+}
+
+#contact-subheading {
+  text-align: center;
+  font-size: 1.2em;
+
+  * {
+    margin: 10px;
+  }
+}
+
+#contact-form {
+  * {
+    margin: 10px;
+    font-size: 30px;
+  }
+
+  #submit {
+    padding: 10px 20px;
+    background-color: #0b5c2d;
+    border-radius: 5px;
+  }
+
+  input {
+    width: 50vw;
+    opacity: 50%;
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+  }
+}
+
+#message {
+  height: 20vh;
+}
+
+@media only screen and (max-width: 800px) {
+  #contact-form {
+    input {
+      width: 80vw;
+    }
+  }
+}

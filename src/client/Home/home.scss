@@ -1,0 +1,132 @@
+@import "../styles/general";
+
+$background-image1: url("../resources/farmPics/peas2.jpg");
+$background-image2: url("../resources/farmPics/beans.jpg");
+$background-image3: url("../resources/farmPics/squash.jpg");
+
+@mixin fixed-background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#app {
+  min-height: 100vh;
+  text-align: center;
+  background-image: $background-image1;
+  @include fixed-background-image();
+  @include column-flex();
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  margin: auto;
+  color: $secondary-color;
+  font-size: 30px;
+  font-family: $secondary-font-stack;
+  max-width: 80vw;
+}
+
+.content-container {
+  max-width: 50vw;
+  margin: 5vh auto;
+  @include column-flex();
+
+  p {
+    font-size: 30px;
+    font-family: $primary-font-stack;
+    text-align: center;
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 40px;
+    font-family: $secondary-font-stack;
+    text-align: center;
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  * {
+    color: $primary-color;
+  }
+}
+
+.link:hover {
+  font-weight: bold;
+}
+
+.content-pane {
+  min-height: 50vh;
+  width: 100vw;
+  background-color: $secondary-color;
+  @include column-flex();
+}
+
+#background1 {
+  min-height: 50vh;
+  background-image: $background-image2;
+  margin: auto;
+  @include fixed-background-image();
+  @include column-flex();
+}
+
+#background2 {
+  min-height: 50vh;
+  background-image: $background-image3;
+  margin: auto;
+  @include fixed-background-image();
+  @include column-flex();
+}
+
+.parallax-container {
+  font-family: $secondary-font-stack;
+  max-width: 50vw;
+  margin: auto;
+  @include column-flex();
+
+  * {
+    color: $secondary-color;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  *:hover {
+    color: $hover-color;
+  }
+}
+
+#footer-container {
+  width: 100vw;
+  background-color: $footer-color;
+  text-align: center;
+  min-height: 5vh;
+  padding: 10px;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(../resources/fonts/Raleway-Regular.ttf);
+}

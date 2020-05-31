@@ -1,0 +1,20 @@
+$primary-color: black;
+$secondary-color: white;
+$hover-color: lightgray;
+$footer-color: #47433d;
+
+$secondary-font-stack: "Poppins", sans-serif;
+$primary-font-stack: myFirstFont;
+
+@mixin column-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fixed-background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

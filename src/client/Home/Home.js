@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./home.scss";
 import PageFooter from "../pageLayoutComponents/PageFooter";
 import Header from "../pageLayoutComponents/Header";
 
@@ -27,8 +27,8 @@ function Home() {
           </p>
         </div>
       </div>
-      <div id="background1" className="column-flex">
-        <div className="parallax-container column-flex">
+      <div id="background1">
+        <div className="parallax-container">
           <h1 className="parallax-link">
             <Link to="/findus">Find Us</Link>
           </h1>
@@ -47,8 +47,8 @@ function Home() {
           </h3>
         </div>
       </div>
-      <div id="background2" className="column-flex">
-        <div className="parallax-container column-flex">
+      <div id="background2">
+        <div className="parallax-container">
           <h1>
             <Link to="/gallery">Gallery</Link>
           </h1>

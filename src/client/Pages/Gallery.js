@@ -1,5 +1,5 @@
 import React from "react";
-import "./Page.css";
+import "./page.scss";
 import PageFooter from "../pageLayoutComponents/PageFooter";
 import Header from "../pageLayoutComponents/Header";
 
@@ -50,7 +50,7 @@ class Gallery extends React.Component {
     return (
       <div>
         <Header headerName="page-header"></Header>
-        <div className="main-content column-flex">
+        <div className="main-content">
           <h1 className="main-content-header">Gallery</h1>
           <div id="gallery" className="main-content-body">
             {this.renderImages()}
