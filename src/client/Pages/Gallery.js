@@ -3,10 +3,15 @@ import "./page.scss";
 import PageFooter from "../pageLayoutComponents/PageFooter";
 import Header from "../pageLayoutComponents/Header";
 
-import farmfield from "../resources/gallery/farmfield.jpg";
-import farmfield2 from "../resources/gallery/farmfield2.jpg";
-import farmfield3 from "../resources/gallery/farmfield3.jpg";
-import farmfield4 from "../resources/gallery/farmfield4.jpg";
+import beans from "../resources/compressedPics/beans.jpg";
+import onions from "../resources/compressedPics/onions.jpg";
+import peas from "../resources/compressedPics/peas.jpg";
+import squash from "../resources/compressedPics/squash.jpg";
+import cow from "../resources/compressedPics/cow.jpg";
+import storm from "../resources/compressedPics/storm.jpg";
+import sunny from "../resources/compressedPics/sunny.jpg";
+import sunset from "../resources/compressedPics/sunset.jpg";
+import watering2 from "../resources/compressedPics/watering2.jpg";
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -14,18 +19,17 @@ class Gallery extends React.Component {
     this.state = { images: [] };
   }
   componentDidMount = () => {
-    console.log("testing...");
-    console.log(farmfield);
     this.setState({
       images: [
-        farmfield,
-        farmfield2,
-        farmfield3,
-        farmfield4,
-        farmfield,
-        farmfield2,
-        farmfield3,
-        farmfield4,
+        beans,
+        onions,
+        peas,
+        squash,
+        cow,
+        storm,
+        sunny,
+        sunset,
+        watering2,
       ],
     });
   };

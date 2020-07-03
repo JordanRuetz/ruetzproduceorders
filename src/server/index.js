@@ -13,6 +13,14 @@ app.use(
 
 app.use("/", express.static(path.join(__dirname, "../../dist")));
 
+app.get("/getPhoto", function (req, res) {
+  const fileLocation = path.join(
+    __dirname,
+    "../../src/client/resources/farmPics/beans.jpg"
+  );
+  res.sendFile(fileLocation);
+});
+
 app.get("*", function (req, res) {
   const fileLocation = path.join(__dirname, "../../dist/index.html");
   res.sendFile(fileLocation);

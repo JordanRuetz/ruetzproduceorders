@@ -1,8 +1,8 @@
 @import "../styles/general";
 
-$background-image1: url("../resources/farmPics/peas2.jpg");
-$background-image2: url("../resources/farmPics/beans.jpg");
-$background-image3: url("../resources/farmPics/squash.jpg");
+$background-image1: url("../resources/compressedPics/peas.jpg");
+$background-image2: url("../resources/compressedPics/beans.jpg");
+$background-image3: url("../resources/compressedPics/squash.jpg");
 
 @mixin fixed-background-image {
   background-size: cover;
@@ -123,7 +123,7 @@ body {
   background-color: $footer-color;
   text-align: center;
   min-height: 5vh;
-  padding: 10px;
+  padding: 10px 0px;
 }
 
 @font-face {
