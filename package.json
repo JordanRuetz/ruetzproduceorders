@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "node src/server/index.js",
+    "start": "node --experimental-json-modules src/server/index.js",
     "build": "NODE_ENV=production webpack",
+    "build2": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently  \"npm run dev:client\" \"npm run dev:server\"",
     "dev:client": "NODE_ENV=development webpack",
-    "dev:server": "nodemon src/server/index.js"
+    "dev:server": "nodemon --experimental-json-modules src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,15 +24,18 @@
   },
   "homepage": "https://github.com/JordanRuetz/firstServer#readme",
   "dependencies": {
+    "aws-sdk": "^2.771.0",
     "express": "^4.17.1",
     "http": "0.0.1-security",
+    "mysql2": "^2.2.5",
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.43.0"
+    "webpack": "^4.44.2",
+    "typeorm": "^0.2.28"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
