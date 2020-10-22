@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "type": "module",
   "scripts": {
     "start": "node --experimental-json-modules src/server/index.js",
     "build": "NODE_ENV=production webpack",
@@ -25,6 +24,7 @@
   "homepage": "https://github.com/JordanRuetz/firstServer#readme",
   "dependencies": {
     "aws-sdk": "^2.771.0",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "mysql2": "^2.2.5",
@@ -34,8 +34,8 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.44.2",
-    "typeorm": "^0.2.28"
+    "typeorm": "^0.2.28",
+    "webpack": "^4.44.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

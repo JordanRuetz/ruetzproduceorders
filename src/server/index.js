@@ -1,22 +1,21 @@
-import express from "express"
-import http from "http"
-import path from "path"
-import typeorm from "typeorm"
-import {getSecret} from "./fetchSecret.js"
-import { fileURLToPath } from 'url';
+const express = require('express')
+const http = require('http')
+const path = require('path')
+const typeorm = require('typeorm')
+const bodyParser = require('body-parser');
+const secretManager = require('./fetchSecret')
 
-import student from "./entity/student.json"
+const productSchema = require('./entity/ProductSchema')
+const productQuantitySchema = require('./entity/ProductQuantitySchema')
+const orderSchema = require('./entity/OrdersSchema')
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const routes = require("./routes")
 
-const startServer = async () => {
-  const secret = await getSecret();
+const getConnection = async () => {
+  const secret = await secretManager.getSecret();
   const jsonSecret = JSON.parse(secret)
 
-  var EntitySchema = typeorm.EntitySchema
-
-  const connection = await typeorm.createConnection({ 
+  return await typeorm.createConnection({ 
      "type": jsonSecret.engine, 
      "host": jsonSecret.host, 
      "port": jsonSecret.port, 
@@ -25,44 +24,69 @@ const startServer = async () => {
      "database": "dbmaster",
      "synchronize": true, 
      "logging": false,
-     entities: [ new EntitySchema(student) ] 
+     entities: [ orderSchema, productSchema, productQuantitySchema ] 
   })
-
-//   const repo = connection.getRepository("Student")
-//   var student = { 
-//     name: "Student1", 
-//     age: 18 
-//  };
-//  repo.save(student)
 }
 
-startServer()
+getConnection().then(async connection => {
+  var app = express();
+  app.use(bodyParser.urlencoded());
+  app.use(bodyParser.json());
 
+  app.use((req, res, next) => {
+    // check if request if for a method that needs authorization
+    if (!routes.authRequired.includes(req.url)) {
+      return next()
+    }
 
+    // authentication middleware  
+    const auth = {login: 'yourlogin', password: 'yourpassword'} // change this
+  
+    // parse login and password from headers
+    const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
+    const [login, password] = Buffer.from(b64auth, 'base64').toString().split(':')
 
-var app = express();
-
-const PORT = process.env.PORT || 3000;
-
-app.use(
-  "/public/icons",
-  express.static(path.join(__dirname, "../../public/icons"))
-);
-
-app.use("/", express.static(path.join(__dirname, "../../dist")));
-
-app.get("/getPhoto", function (req, res) {
-  const fileLocation = path.join(
-    __dirname,
-    "../../src/client/resources/farmPics/beans.jpg"
+    if (login && password && login === auth.login && password === auth.password) {
+      return next()
+    }
+  
+    res.status(401).send('Authentication required to perform this action!')
+  })
+  
+  const PORT = process.env.PORT || 3000;
+  
+  app.use(
+    "/public/icons",
+    express.static(path.join(__dirname, "../../public/icons"))
   );
-  res.sendFile(fileLocation);
-});
+  
+  app.use("/", express.static(path.join(__dirname, "../../dist")));
+  
+  // register all application routes
+  routes.appRoutes.forEach(route => {
+    app[route.method](route.path, (req, res, next) => {
+        route.action(req, res)
+            .then(() => next)
+            .catch(err => next(err));
+    });
+  });
+  
+  app.get("/getPhoto", function (req, res) {
+    const fileLocation = path.join(
+      __dirname,
+      "../../src/client/resources/farmPics/beans.jpg"
+    );
+    res.sendFile(fileLocation);
+  });
+  
+  app.get("*", function (req, res) {
+    const fileLocation = path.join(__dirname, "../../dist/index.html");
+    res.sendFile(fileLocation);
+  });
+  
+  const server = http.createServer(app);
+  server.listen(PORT);
+})
 
-app.get("*", function (req, res) {
-  const fileLocation = path.join(__dirname, "../../dist/index.html");
-  res.sendFile(fileLocation);
-});
 
-const server = http.createServer(app);
-server.listen(PORT);
+
