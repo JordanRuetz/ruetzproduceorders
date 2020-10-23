@@ -11,7 +11,7 @@ function Contact() {
         <h1>Contact Us</h1>
 
         <div id="contact-subheading">
-          <h3>Email us at temp@gmail.com</h3>
+          <h3>Email us at pandlruetz@gmail.com</h3>
           <h3>OR</h3>
           <h3>Complete the form below</h3>
         </div>
