@@ -1,43 +1,34 @@
   
 const typeorm = require("typeorm");
+const ProductQuantity = require('../model/ProductQuantity').ProductQuantity
 
 /**
- * Adds a  product to the database
+ * Manages interaction of an API request with productQuantity table
  */
-
 class ProductQuantityController {
+    static getRepo() {
+        return typeorm.getConnection().getRepository(ProductQuantity)
+    }
+
     static async addProduct(req, res) {
-        const newProduct = {
-          name: req.body.name,
-          quantity: req.body.quantity,
-          quantityName: req.body.quantityName,
-          price: req.body.quantityUnit
-        }
+        const name = req.body.name
+        const quantity = req.body.quantity
+        const quantityName = req.body.quantityName
+        const quantityUnit = req.body.quantityUnit
+        const productQuantity = new ProductQuantity(name, quantity, quantityName, quantityUnit)
       
-        const connection = typeorm.getConnection()
-        const repo = connection.getRepository("ProductQuantity")
-        repo.save(newProduct)
-      
+        this.getRepo().save(productQuantity)
         res.status(200).send("Saved successfully!")
     }
 
     static async getProducts(req, res) {
-        const connection = typeorm.getConnection()
-        const repo = connection.getRepository("ProductQuantity")
-        const products = await repo.find()
-        console.log(products)
-      
+        const products = await this.getRepo().find()
         res.status(200).send(products)
     }
 
     static async removeProduct(req, res) {
-        const connection = typeorm.getConnection()
-        const repo = connection.getRepository("ProductQuantity")
-    
         const productToRemove = req.body.name
-    
-        await repo.delete(productToRemove)
-      
+        await this.getRepo().delete(productToRemove)
         res.status(200).send("Removed successfully!")
     }
 }
