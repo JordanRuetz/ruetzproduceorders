@@ -26,7 +26,7 @@ const dbAppRoutes = {
         path: "/product/quantity/add",
         method: "post",
         action: ProductQuantityController.addProduct,
-        requiredParams: ["name", "quantity", "quantityName", "quantityUnit"],
+        requiredParams: ["name", "quantity", "quantityName", "price"],
         authRequired: true
     },
     "/product/quantities": {
@@ -56,7 +56,7 @@ const dbAppRoutes = {
         path: "/order/remove",
         method: "post",
         action: OrderController.removeOrder,
-        requiredParams: ["name"],
+        requiredParams: ["id"],
         authRequired: true
     }
 }

@@ -17,18 +17,18 @@ class ProductController {
         const quantityUnit = req.body.quantityUnit
         const product = new Product(name, description, quantityRemaining, quantityUnit)
       
-        this.getRepo().save(product)
+        ProductController.getRepo().save(product)
         res.status(200).send("Saved successfully!")
     }
 
     static async getProducts(req, res) {
-        const products = await this.getRepo().find()
+        const products = await ProductController.getRepo().find()
         res.status(200).send(products)
     }
 
     static async removeProduct(req, res) {
         const productToRemove = req.body.name
-        await this.getRepo().delete(productToRemove)
+        await ProductController.getRepo().delete({name: productToRemove})
         res.status(200).send("Removed successfully!")
     }
 }

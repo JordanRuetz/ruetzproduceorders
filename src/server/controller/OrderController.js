@@ -18,18 +18,18 @@ class OrderController {
         const order = req.body.order
         const newOrder = new Order(firstName, lastName, pickupDate, cost, order)
       
-        this.getRepo().save(newOrder)
+        OrderController.getRepo().save(newOrder)
         res.status(200).send("Saved successfully!")
     }
 
     static async getOrders(req, res) {
-        const products = await this.getRepo().find()
+        const products = await OrderController.getRepo().find()
         res.status(200).send(products)
     }
 
     static async removeOrder(req, res) {
-        const productToRemove = req.body.name
-        this.getRepo().delete(productToRemove)
+        const productToRemove = req.body.id
+        OrderController.getRepo().delete(productToRemove)
         res.status(200).send("Removed successfully!")
     }
 }
